@@ -9,6 +9,7 @@ const rowStyle = {
 
 const h1Style = {
   color: 'rgb(24, 69, 147)',
+  fontSize: '350%',
   textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
 };
 
