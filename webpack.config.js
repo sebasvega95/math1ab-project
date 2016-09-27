@@ -1,6 +1,7 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
+const ghPage = 'https://sebasvega95.github.io/math1ab-project';
 
 const config = {
   paths: {
@@ -39,7 +40,7 @@ module.exports = {
   },
   output: {
     path: config.paths.build,
-    publicPath: config.paths.build,
+    publicPath: `${ghPage}/build/`,
     filename: "client.min.js"
   },
   plugins: debug ? [] : [
