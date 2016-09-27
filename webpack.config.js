@@ -1,11 +1,11 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
-var path = require('path');
+const debug = process.env.NODE_ENV !== 'production';
+const webpack = require('webpack');
+const path = require('path');
 
 const config = {
   paths: {
-    src: path.join(__dirname, 'src/'),
-    build: path.join(__dirname, 'build/')
+    build: `${path.resolve('./build')}/`,
+    src: `${path.resolve('./src')}/`
   }
 };
 
@@ -40,7 +40,7 @@ module.exports = {
   output: {
     path: config.paths.build,
     publicPath: config.paths.build,
-    filename: "../client.min.js"
+    filename: "client.min.js"
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
