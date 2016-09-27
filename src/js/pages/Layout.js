@@ -7,6 +7,11 @@ const rowStyle = {
   height: '100%'
 };
 
+const h1Style = {
+  color: 'rgb(24, 69, 147)',
+  textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
+};
+
 export default class Layout extends React.Component {
   render() {
     const containerSize = 8;
@@ -17,7 +22,9 @@ export default class Layout extends React.Component {
         <Row style={rowStyle}>
           <Col lg={containerSize} lgOffset={containerOffset}
             md={containerSize} mdOffset={containerOffset}>
-            <h1 className="text-center">Departamento de matemáticas</h1>
+            <h1 className="text-center" style={h1Style}>
+              Departamento de matemáticas
+            </h1>
             {this.props.children}
           </Col>
         </Row>
