@@ -1,7 +1,6 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
-const ghPage = '/math1ab-project';
 
 const config = {
   paths: {
@@ -40,8 +39,8 @@ module.exports = {
   },
   output: {
     path: config.paths.build,
-    publicPath: `${ghPage}/build/`,
-    filename: "client.min.js"
+    publicPath: '/build/',
+    filename: 'client.min.js'
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
