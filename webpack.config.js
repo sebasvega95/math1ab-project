@@ -29,11 +29,11 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'url-loader?limit=8192'
-        // loaders: [
-        //   'file?hash=sha512&digest=hex&name=[hash].[ext]',
-        //   'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-        // ]
+        // loader: 'url-loader?limit=8192'
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       }
     ]
   },
