@@ -1,7 +1,7 @@
 const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
-const ghPage = 'https://sebasvega95.github.io/math1ab-project';
+const ghPage = '/math1ab-project';
 
 const config = {
   paths: {
