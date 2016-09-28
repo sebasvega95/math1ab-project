@@ -2,11 +2,14 @@ import React from 'react';
 import {Image, ListGroup, ListGroupItem, Panel} from 'react-bootstrap';
 
 let imageStyle = {
-  padding: 20
+  padding: 20,
+  margin: 'auto'
 };
 
+const panelStyle = {margin: '5px 0'};
+
 let theory = (
-  <Panel header={<h1>Problemas</h1>} bsStyle='primary'>
+  <Panel header={<h1>Problemas</h1>} bsStyle='primary' style={panelStyle}>
     <ListGroup>
       <ListGroupItem>
         <p className='text-justify'>

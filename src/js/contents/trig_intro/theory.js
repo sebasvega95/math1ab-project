@@ -2,11 +2,14 @@ import React from 'react';
 import {Image, ListGroup, ListGroupItem, Panel} from 'react-bootstrap';
 
 let imageStyle = {
-  padding: 20
+  padding: 20,
+  margin: 'auto'
 };
 
+const panelStyle = {margin: '5px 0'};
+
 let theory = (
-  <Panel header={<h1>Introducción a la trigonometría</h1>} bsStyle='primary'>
+  <Panel header={<h1>Introducción a la trigonometría</h1>} bsStyle='primary' style={panelStyle}>
     <p className={'text-justify'}>
       Si uno de los ángulos de un triángulo es 90° y otro es conocido, el tercer
       ángulo está fijo, puesto que la suma los tres ángulos de un triángulo

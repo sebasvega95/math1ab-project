@@ -2,12 +2,14 @@ const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
 
+
 const config = {
   paths: {
     build: `${path.resolve('./build')}/`,
     src: `${path.resolve('./src')}/`
   }
 };
+const publicPath = process.env.LOCAL ? config.paths.build : '/math1ab-project/build/';
 
 module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
@@ -39,7 +41,7 @@ module.exports = {
   },
   output: {
     path: config.paths.build,
-    publicPath: '/math1ab-project/build/',
+    publicPath: publicPath,
     filename: 'client.min.js'
   },
   plugins: debug ? [] : [

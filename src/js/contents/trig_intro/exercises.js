@@ -2,14 +2,24 @@ import {Button, Col, Collapse, Grid, Image, ListGroup, ListGroupItem,
   Panel, Row, Well} from 'react-bootstrap';
 import React from 'react';
 
-const collapsibleWellStyle = {paddingTop: 25},
-  imageStyle = {padding: 20},
-  liStyle = {padding: 10},
-  mathDivStyle = {
+const collapsibleWellStyle = {paddingTop: 25};
+
+const imageStyle = {
+  padding: 20,
+  margin: 'auto'
+};
+
+const liStyle = {padding: 10};
+
+const mathDivStyle = {
     margin: 'auto',
     padding: 10,
     textAlign: 'center'
 };
+
+const buttonStyle = {margin: '5px 0'};
+
+const panelStyle = {margin: '5px 0'};
 
 const CollapsibleWell = React.createClass({
   getInitialState() {
@@ -34,7 +44,7 @@ const CollapsibleWell = React.createClass({
   render() {
     return (
       <div style={collapsibleWellStyle}>
-        <Button bsStyle="info" onClick={this.handleClick}>
+        <Button bsStyle="info" onClick={this.handleClick} style={buttonStyle}>
         {this.state.buttonString} solución
         </Button>
         <Collapse in={this.state.open}>
@@ -48,7 +58,7 @@ const CollapsibleWell = React.createClass({
 });
 
 const exercises = (
-  <Panel header={<h1>Ejercicios</h1>} bsStyle="primary">
+  <Panel header={<h1>Ejercicios</h1>} bsStyle="primary" style={panelStyle}>
     <ListGroup>
       <ListGroupItem>
         <p className="text-justify">

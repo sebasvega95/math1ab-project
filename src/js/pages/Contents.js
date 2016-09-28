@@ -7,16 +7,16 @@ export default class Contents extends React.Component {
     return (
       <Panel bsStyle="primary" title="Elija un tema">
         <ListGroup>
-          <Link to="/">
             <ListGroupItem>
-              Teoría de conjuntos
+              <Link to="/">
+                Teoría de conjuntos
+              </Link>
             </ListGroupItem>
-          </Link>
-            <Link to="topics/trigonometry-intro">
-              <ListGroupItem>
+            <ListGroupItem>
+              <Link to="topics/trigonometry-intro">
                 Indroducción a la trigonometría
-              </ListGroupItem>
-            </Link>
+              </Link>
+            </ListGroupItem>
         </ListGroup>
       </Panel>
     );
