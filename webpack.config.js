@@ -9,7 +9,7 @@ const config = {
     src: `${path.resolve('./src')}/`
   }
 };
-const publicPath = process.env.LOCAL ? config.paths.build : '/math1ab-project/build/';
+const publicPath = debug ? config.paths.build : '/math1ab-project/build/';
 
 module.exports = {
   devtool: debug ? "inline-sourcemap" : null,

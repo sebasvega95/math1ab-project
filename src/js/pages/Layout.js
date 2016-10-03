@@ -1,10 +1,8 @@
-import {Col, Grid, Nav, Navbar, NavItem, Row} from 'react-bootstrap';
-import React from 'react';
+import {Col, Grid, Nav, NavItem, Navbar, Row} from 'react-bootstrap';
 import {Link} from 'react-router';
+import React from 'react';
 
-const gridStyle = {
-  minHeight: '100%'
-};
+const gridStyle = {minHeight: '100%'};
 
 const rowStyle = {
   background: 'white',
@@ -16,8 +14,8 @@ const rowStyle = {
 const h1Style = {
   color: 'rgb(24, 69, 147)',
   fontSize: '350%',
-  textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
-  padding: '0 0 50px 0'
+  padding: '0 0 50px 0',
+  textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
 };
 
 const utpStyle = {padding: 15};
@@ -30,9 +28,9 @@ export default class Layout extends React.Component {
     return (
       <Grid style={gridStyle}>
         <Row style={rowStyle}>
-          <img src="assets/img/marca_UTP.png" style={utpStyle} />
           <Col lg={containerSize} lgOffset={containerOffset}
             md={containerSize} mdOffset={containerOffset}>
+            <img src="assets/img/marca_UTP.png" style={utpStyle} />
             <h1 className="text-center" style={h1Style}>
               Departamento de matemáticas
             </h1>
