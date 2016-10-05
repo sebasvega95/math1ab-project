@@ -1,5 +1,4 @@
 import {Col, Grid, Nav, NavItem, Navbar, Row} from 'react-bootstrap';
-import {Link} from 'react-router';
 import React from 'react';
 
 const gridStyle = {minHeight: '100%'};
@@ -21,6 +20,26 @@ const h1Style = {
 const utpStyle = {padding: 15};
 
 export default class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleSelect(selectedKey) {
+    switch (selectedKey) {
+      case 1:
+        this.context.router.push('/');
+        break;
+      default:
+        this.context.router.push('/');
+    }
+  }
+
+  handleClick() {
+    this.context.router.push('/');
+  }
+
   render() {
     const containerSize = 8;
     const containerOffset = (12 - containerSize) / 2;
@@ -40,10 +59,8 @@ export default class Layout extends React.Component {
                   Navegación
                 </Navbar.Brand>
               </Navbar.Header>
-              <Nav>
-                <NavItem eventKey={1}>
-                  <Link to="/">Lista de contenidos</Link>
-                </NavItem>
+              <Nav onSelect={this.handleSelect}>
+                <NavItem eventKey={1}>Lista de contenidos</NavItem>
               </Nav>
             </Navbar>
             {this.props.children}
@@ -53,3 +70,5 @@ export default class Layout extends React.Component {
     );
   }
 }
+
+Layout.contextTypes = {router: React.PropTypes.object.isRequired};
