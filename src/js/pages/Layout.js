@@ -41,7 +41,7 @@ export default class Layout extends React.Component {
   }
 
   render() {
-    const containerSize = 8;
+    const containerSize = 10;
     const containerOffset = (12 - containerSize) / 2;
 
     return (

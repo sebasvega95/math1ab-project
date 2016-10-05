@@ -19,4 +19,9 @@ body {
   margin: auto;
   max-width: 1366px;
   min-height: 100%;
+  width: 85%;
+}
+
+a, button {
+  outline: 0 !important;
 }
