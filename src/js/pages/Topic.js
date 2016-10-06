@@ -1,22 +1,30 @@
-import {Button, Tab, Tabs} from 'react-bootstrap';
+import {Tab, Tabs} from 'react-bootstrap';
 import $ from 'jquery';
 import React from 'react';
 import katex from 'katex';
-import trigExercises from '../contents/trig_intro/exercises';
-import trigProblems from '../contents/trig_intro/problems';
-import trigTheory from '../contents/trig_intro/theory';
-
-const topics = {
-  'trigonometry-intro': {
-    exercises: trigExercises,
-    problems: trigProblems,
-    theory: trigTheory
-  }
-};
-
-const tabStyle = {outline: 0}
 
 export default class Topic extends React.Component {
+  constructor(props) {
+    super(props);
+    const wip = <p>Estamos trabajando en esta sección!</p>;
+
+    try {
+      this.exercises = require(`../contents/${this.props.params.topic}/exercises`);
+    } catch (e) {
+      this.exercises = wip;
+    }
+    try {
+      this.problems = require(`../contents/${this.props.params.topic}/problems`);
+    } catch (e) {
+      this.problems = wip;
+    }
+    try {
+      this.theory = require(`../contents/${this.props.params.topic}/theory`);
+    } catch (e) {
+      this.theory = wip;
+    }
+  }
+
   componentDidMount() {
     $('.math').each(function() {
       const texTxt = $(this).text();
@@ -35,19 +43,17 @@ export default class Topic extends React.Component {
   }
 
   render() {
-    const topic = topics[this.props.params.topic];
-
     return (
       <div>
-        <Tabs defaultActiveKey={0} id="topic-tabs" style={tabStyle}>
-          <Tab eventKey={0} title="Lección" style={tabStyle}>
-            {topic.theory}
+        <Tabs defaultActiveKey={0} id="topic-tabs">
+          <Tab eventKey={0} title="Lección">
+            {this.theory}
           </Tab>
-          <Tab eventKey={1} title="Ejercicios" style={tabStyle}>
-            {topic.exercises}
+          <Tab eventKey={1} title="Ejercicios">
+            {this.exercises}
           </Tab>
-          <Tab eventKey={2} title="Problemas" style={tabStyle}>
-            {topic.problems}
+          <Tab eventKey={2} title="Problemas">
+            {this.problems}
           </Tab>
         </Tabs>
       </div>

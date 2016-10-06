@@ -1,14 +1,14 @@
-import React from 'react';
 import {Image, ListGroup, ListGroupItem, Panel} from 'react-bootstrap';
+import React from 'react';
 
-let imageStyle = {
+const imageStyle = {
   padding: 20,
   margin: 'auto'
 };
 
 const panelStyle = {margin: '5px 0'};
 
-let theory = (
+const problems = (
   <Panel header={<h1>Problemas</h1>} bsStyle='primary' style={panelStyle}>
     <ListGroup>
       <ListGroupItem>
@@ -41,4 +41,4 @@ let theory = (
   </Panel>
 );
 
-export default theory;
+module.exports = problems;

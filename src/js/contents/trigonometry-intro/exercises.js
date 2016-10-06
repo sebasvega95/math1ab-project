@@ -1,12 +1,12 @@
-import {Button, Col, Collapse, Grid, Image, ListGroup, ListGroupItem,
-  Panel, Row, Well} from 'react-bootstrap';
+import {Button, Collapse, Image, ListGroup, ListGroupItem,
+  Panel, Well} from 'react-bootstrap';
 import React from 'react';
 
 const collapsibleWellStyle = {paddingTop: 25};
 
 const imageStyle = {
-  padding: 20,
-  margin: 'auto'
+  margin: 'auto',
+  padding: 20
 };
 
 const liStyle = {padding: 10};
@@ -151,9 +151,9 @@ const exercises = (
           Como se debe relacionar el lado opuesto con el adyacente, podemos usar
           la función <b>tangente</b> y obtener una ecuación:
         </p>
-        <div className='math' style={mathDivStyle}>{'\\tan(55.3^\\circ) = \\frac{y}{10}'}</div>
-        <div className='math' style={mathDivStyle}>{'y = 10\\tan(55.3^\\circ)'}</div>
-        <div className='math' style={mathDivStyle}>{'y \\approx 14.442'}</div>
+        <div className="math" style={mathDivStyle}>{'\\tan(55.3^\\circ) = \\frac{y}{10}'}</div>
+        <div className="math" style={mathDivStyle}>{'y = 10\\tan(55.3^\\circ)'}</div>
+        <div className="math" style={mathDivStyle}>{'y \\approx 14.442'}</div>
         </CollapsibleWell>
       </ListGroupItem>
       <ListGroupItem>
@@ -188,4 +188,4 @@ const exercises = (
   </Panel>
 );
 
-export default exercises;
+module.exports = exercises;
