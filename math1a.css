@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: linear-gradient(lightblue, white) no-repeat center fixed;
+  background-size: cover;
+  height: 100%;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container, #app {
+  height: 100%;
+  margin: auto;
+  max-width: 1366px;
+  min-height: 100%;
+  width: 85%;
+}
+
+a, button {
+  outline: 0 !important;
+}

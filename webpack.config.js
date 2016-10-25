@@ -12,8 +12,16 @@ const config = {
 const publicPath = debug ? config.paths.build : '/math1ab-project/build/';
 
 module.exports = {
-  devtool: debug ? "inline-sourcemap" : null,
-  entry: path.join(config.paths.src, "js", "client.js"),
+  devtool: debug ? 'inline-sourcemap' : null,
+  entry: {
+    vendor: [
+      'jquery',
+      'react',
+      'react-bootstrap',
+      'react-router'
+    ],
+    math1a: path.join(config.paths.src, 'js', 'math1a.js')
+  },
   module: {
     loaders: [
       {
@@ -21,8 +29,8 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
+          presets: ['react', 'es2015', 'stage-0']
         }
       },
       {
@@ -42,11 +50,16 @@ module.exports = {
   output: {
     path: config.paths.build,
     publicPath: publicPath,
-    filename: 'client.min.js'
+    filename: '[name].bundle.js'
   },
   plugins: debug ? [] : [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-  ],
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {warnings: false},
+      mangle: false,
+      sourcemap: false
+    })
+  ]
 };

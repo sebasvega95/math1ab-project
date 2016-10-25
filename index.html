@@ -6,13 +6,39 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>Aprende matemáticas!</title>
   </head>
   <body>
-    <div id="app"></div>
-    <!-- <script src="/math1ab-project/build/client.min.js"></script> -->
-    <script src="build/client.min.js"></script>
+    <div class="welcome text-center">
+      <blockquote id="mathTitle"></blockquote>
+    </div>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h1>Cursos</h1>
+            <div class="list-group">
+              <a class="list-group-item list-group-item-info" href="math1a.html">Matemáticas 1A</a>
+              <li class="list-group-item list-group-item-info">Matemáticas 1B</li>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>Retos</h1>
+            <div class="list-group">
+              <li class="list-group-item list-group-item-info">Álgebra</li>
+              <li class="list-group-item list-group-item-info">Trigonometría</li>
+              <li class="list-group-item list-group-item-info">Cálculo</li>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h1>Aventura matemática</h1>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="assets/js/quotes.js" defer></script>
   </body>
 </html>

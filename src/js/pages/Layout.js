@@ -31,6 +31,9 @@ export default class Layout extends React.Component {
       case 1:
         this.context.router.push('/');
         break;
+      case 2:
+        window.location.assign('./index.html');
+        break;
       default:
         this.context.router.push('/');
     }
@@ -51,7 +54,7 @@ export default class Layout extends React.Component {
             md={containerSize} mdOffset={containerOffset}>
             <img src="assets/img/marca_UTP.png" style={utpStyle} />
             <h1 className="text-center" style={h1Style}>
-              Departamento de matemáticas
+              Matemáticas 1A
             </h1>
             <Navbar>
               <Navbar.Header>
@@ -60,6 +63,7 @@ export default class Layout extends React.Component {
                 </Navbar.Brand>
               </Navbar.Header>
               <Nav onSelect={this.handleSelect}>
+                <NavItem eventKey={2}>Inicio</NavItem>
                 <NavItem eventKey={1}>Lista de contenidos</NavItem>
               </Nav>
             </Navbar>

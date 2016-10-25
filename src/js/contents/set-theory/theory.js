@@ -18,7 +18,7 @@ const theory = (
     <p className="text-justify">
       Se suelen escribir los conjuntos entre llaves, así
       <strong> {'{pepino, zanahoria, papa, pera, ...}'}</strong>.
-      en este caso, cada <i>iembro</i> o <i>elemento</i> del conjunto es un
+      en este caso, cada <i>miembro</i> o <i>elemento</i> del conjunto es un
       vegetal, una fruta o un tubérculo. Otra forma de ver los conjuntos es
       visualmente, se suelen representar por círculos o elípses verticales.
     </p>
